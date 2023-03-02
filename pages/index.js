@@ -19,7 +19,7 @@ export default function Component() {
   useEffect(() => {
     if (session) {
       const githubInsights = new GithubInsights({
-        viewerToken: "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",
+        viewerToken: "",
       });
 
       /* console.log("process.env.PAT: ", process.env.PAT);
