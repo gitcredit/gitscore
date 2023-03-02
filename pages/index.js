@@ -27,17 +27,19 @@ export default function Component() {
 
       const fetchData = async () => {
         const {
-          setForkCount,
-          setFollowersForkCount,
-          setStargazerCount,
-          setFollowersStargazerCount,
-          setFollowersFollowerCount,
-          setMergedPullRequestCount,
-          setMergedPullRequestCount30d,
-          setMergedPullRequestCount365d,
+          forkCount,
+          followersForkCount,
+          stargazerCount,
+          followersStargazerCount,
+          followersFollowerCount,
+          mergedPullRequestCount,
+          mergedPullRequestCount30d,
+          mergedPullRequestCount365d,
         } = await githubInsights.scanUser("rickkdev");
       };
       fetchData();
+
+      setForkCount(forkCount);
     }
   }, [session]);
 
@@ -54,7 +56,7 @@ export default function Component() {
             Signed in as {session.user.email}
           </div>
 
-          <div>{followersFollowerCount}</div>
+          <div>{forkCount}</div>
           <div className="flex justify-center">
             <button className="border p-3" onClick={() => signOut()}>
               Sign out
