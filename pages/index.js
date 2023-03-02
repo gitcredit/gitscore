@@ -19,11 +19,8 @@ export default function Component() {
   useEffect(() => {
     if (session) {
       const githubInsights = new GithubInsights({
-        viewerToken: "",
+        viewerToken: "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",
       });
-
-      /* console.log("process.env.PAT: ", process.env.PAT);
-       */
 
       const fetchData = async () => {
         const {
@@ -36,10 +33,17 @@ export default function Component() {
           mergedPullRequestCount30d,
           mergedPullRequestCount365d,
         } = await githubInsights.scanUser("rickkdev");
+
+        setForkCount(forkCount);
+        setFollowersForkCount(followersForkCount);
+        setStargazerCount(stargazerCount);
+        setFollowersStargazerCount(followersStargazerCount);
+        setFollowersFollowerCount(followersFollowerCount);
+        setMergedPullRequestCount(mergedPullRequestCount);
+        setMergedPullRequestCount30d(mergedPullRequestCount30d);
+        setMergedPullRequestCount365d(mergedPullRequestCount365d);
       };
       fetchData();
-
-      setForkCount(forkCount);
     }
   }, [session]);
 
