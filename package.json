@@ -11,6 +11,7 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^2.2.2",
     "@mktcodelib/github-insights": "^0.0.1",
+    "dotenv": "^16.0.3",
     "next": "13.2.3",
     "next-auth": "^4.20.0",
     "postcss-flexbugs-fixes": "^5.0.2",

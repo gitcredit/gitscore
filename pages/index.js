@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function Component() {
   const { data: session } = useSession();
-  console.log("data: ", session);
   const [insights, setInsights] = useState();
   const [forkCount, setForkCount] = useState();
   const [followersForkCount, setFollowersForkCount] = useState();
@@ -19,7 +18,7 @@ export default function Component() {
   useEffect(() => {
     if (session) {
       const githubInsights = new GithubInsights({
-        viewerToken: "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",
+        viewerToken: "",
       });
 
       const fetchData = async () => {
@@ -48,8 +47,6 @@ export default function Component() {
   }, [session]);
 
   if (session) {
-    console.log("forkCount: ", forkCount);
-
     return (
       <div className="flex flex-col justify-center pt-10">
         <div className="flex font-bold text-xl justify-center pb-3">
@@ -59,8 +56,6 @@ export default function Component() {
           <div className="flex justify-center pb-3">
             Signed in as {session.user.email}
           </div>
-
-          <div>{forkCount}</div>
           <div className="flex justify-center">
             <button className="border p-3" onClick={() => signOut()}>
               Sign out
