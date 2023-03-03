@@ -17,7 +17,7 @@ export default function Component() {
   useEffect(() => {
     if (session) {
       const githubInsights = new GithubInsights({
-        viewerToken: "",
+        viewerToken: process.env.PAT,
       });
 
       const fetchData = async () => {
