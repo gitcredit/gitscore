@@ -108,3 +108,11 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.from-green {
+  --tw-gradient-from: #DAFD00;
+  --tw-gradient-to:#DAFD00;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  color: #363636;
+}
