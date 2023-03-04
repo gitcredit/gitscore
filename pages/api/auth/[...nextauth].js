@@ -11,10 +11,6 @@ export default NextAuth({
 
     // ...add more providers here
   ],
-  callbacks: {
-    redirect: async (url, baseUrl) => {
-      return Promise.resolve(url)
-    }
-  }
+
 
 });
