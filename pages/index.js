@@ -276,7 +276,7 @@ export default function Homer() {
                  
                   className="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-700"
                 >
-                  Connect Github
+                  Connect Github ->
                 </a>
               </div>
             </nav>
