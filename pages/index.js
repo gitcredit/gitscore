@@ -36,6 +36,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ArrowTopRightOnSquareIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { useSession, signIn, signOut } from "next-auth/react";
 
 /* This example requires Tailwind CSS v3.0+ */
 import { Disclosure } from '@headlessui/react'
@@ -234,7 +235,7 @@ export default function Homer() {
               <div className="flex flex-1 items-center">
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <a href="#">
-                    <span className="sr-only">Your Company</span>
+                    <span className="sr-only">gitcredit</span>
                     <img
                       className="h-8 w-auto sm:h-10"
                       src="/gitcredit.svg"
@@ -264,6 +265,7 @@ export default function Homer() {
               
                 <a
                   href="#"
+                 onClick={() => signIn()}
                   className="inline-flex items-center rounded-md border border-transparent bg-gray-600 px-4 py-2 text-base font-medium text-white hover:bg-gray-700"
                 >
                   Connect Github
@@ -337,16 +339,7 @@ export default function Homer() {
               <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                 <div className="mx-auto max-w-md px-6 sm:max-w-2xl sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
                   <div className="lg:py-24">
-                    <a
-                      href="#"
-                      className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base"
-                    >
-                      <span className="rounded-full bg-gradient-to-r from-green to-cyan-600 px-3 py-0.5 text-sm font-semibold leading-5 text-white">
-                        We're hiring
-                      </span>
-                      <span className="ml-4 text-sm">Visit our careers page</span>
-                      <ChevronRightIcon className="ml-2 h-5 w-5 text-gray-500" aria-hidden="true" />
-                    </a>
+      
                     <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                       <span className="block">Financing </span>
                       <span className="block bg-gradient-to-r from-teal-200 to-cyan-400 bg-clip-text pb-3 text-transparent sm:pb-5">
@@ -361,13 +354,14 @@ export default function Homer() {
                       <form action="#" className="sm:mx-auto sm:max-w-xl lg:mx-0">
                         <div className="sm:flex">
              
-                          <div className="mt-3 sm:mt-0 sm:ml-3">
-                            <button
-                              type="submit"
-                              className="block w-full rounded-md bg-gradient-to-r from-green  py-3 px-4 font-medium  shadow hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                          <div className="mt-3 sm:mt-0 sm:ml-3 ">
+                            <div
+                              className="flex flex-row  block w-full rounded-md bg-gradient-to-r from-green  py-3 px-4 font-medium  shadow hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                             >
-                              Get your Credit Report
-                            </button>
+                              <p>Get your Credit Report</p>
+                              <ChevronRightIcon className="ml-2 h-5 w-5 text-gray-500 pt-2" aria-hidden="true" />
+
+                            </div>
                           </div>
                         </div>
                         <p className="mt-3 text-sm text-gray-300 sm:mt-4">
