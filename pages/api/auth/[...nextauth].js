@@ -15,6 +15,7 @@ export default NextAuth({
     async jwt({ token, account }) {
       console.log("JWT_");
       console.log("token_",token);
+      console.log("account",account);
 
       // Persist the OAuth access_token to the token right after signin
       if (account) {
@@ -25,7 +26,9 @@ export default NextAuth({
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
       console.log("SESSION__");
+      console.log("session_",session);
       console.log("token_",token);
+      console.log("user",user);
       session.accessToken = token.accessToken;
       return session
     }
