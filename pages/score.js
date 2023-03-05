@@ -398,7 +398,8 @@ console.log("githubUsername___",githubUsername);
             </Popover.Panel>
           </Transition>
         </Popover>
-
+        <div className=" pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14" style={{backgroundColor:"#7642bd"}}>
+            <div className="mx-auto max-w-7xl lg:px-8">
 <div class="flex">
   <div class="flex-initial ">
   
@@ -761,6 +762,10 @@ console.log("githubUsername___",githubUsername);
           </div>
         </div>
       </div>
+    </div>
+
+
+    </div>
     </div>
     <footer className="bg-gray-50" aria-labelledby="footer-heading">
           <h2 id="footer-heading" className="sr-only">
