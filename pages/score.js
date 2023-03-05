@@ -93,8 +93,12 @@ const githubUsername = session?.profile?.login;
   useEffect(() => {
     setLoading(true)
     fetch('https://api.github.com/users/'+githubUsername+'/repos')
-      .then((res) => res.json())
+      .then((res) => {
+        console.log("RES",res);
+      res.json()
+    })
       .then((data) => {
+        console.log("DATA",data);
         setGithubRepos(data)
         setLoading(false)
       })
