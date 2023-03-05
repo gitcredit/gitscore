@@ -96,10 +96,7 @@ console.log("githubUsername___",githubUsername);
 
     setLoading(true)
     fetch('https://api.github.com/users/'+githubUsername+'/repos')
-      .then((res) => {
-        console.log("RES",res);
-      res.json()
-    })
+      .then((res) => res.json())
       .then((data) => {
         console.log("DATA",data);
         setGithubRepos(data)
@@ -107,8 +104,10 @@ console.log("githubUsername___",githubUsername);
       })
     }
   }, [session])
- 
-console.log(githubRepos);
+ if (!loading){
+  console.log("githubRepos",githubRepos);
+ }
+
 
 
 /*
