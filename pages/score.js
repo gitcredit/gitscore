@@ -467,7 +467,7 @@ console.log("githubUsername___",githubUsername);
 
 
 
-<div class="py-12 px-4">
+<div class="">
 
 
 
