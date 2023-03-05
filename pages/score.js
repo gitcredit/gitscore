@@ -70,6 +70,10 @@ const calcScore = () => {
 
 export default function Score() {
 
+
+
+
+
   function calc_user_rank(data, avg_user) {
     // name                           | x
     // followers                      | +
@@ -180,11 +184,34 @@ console.log("calc_user_rank____");
   const [mergedPullRequestCount30d, setMergedPullRequestCount30d] = useState();
   const [mergedPullRequestCount365d, setMergedPullRequestCount365d] =
   useState();
+  const [githubRepos, setGithubRepos] = useState(null)
+  const [isLoading, setLoading] = useState(false)
   console.log("SESSION_",session);
   console.log("SESSION_",session?.profile);
 
+
+
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('  https://api.github.com/users/'+session?.profile.login+'/repos')
+      .then((res) => res.json())
+      .then((data) => {
+        setGithubRepos(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No repo data</p>
+
+
+
+/*
   const calculatedscore = calc_user_rank(session?.profile,60);
-console.log("SCOREEE",calculatedscore);
+  console.log("SCOREEE",calculatedscore);
+  */
+  console.log("githubRepos",githubRepos);
 
   return (
     <>
