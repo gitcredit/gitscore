@@ -404,7 +404,7 @@ console.log("githubUsername___",githubUsername);
         </Popover>
         <div className=" pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14" style={{backgroundColor:"#7642bd"}}>
             <div className="mx-auto max-w-7xl lg:px-8">
-<div class="flex bg-white">
+<div class="flex bg-white  px-4 py-4">
   <div class="flex-initial ">
   
 <a href="#" className="group block flex-shrink-0">
@@ -423,7 +423,7 @@ console.log("githubUsername___",githubUsername);
       </div>
     </a>
   </div>
-  <div class="grow w-full">
+  <div class="grow w-full pl-4">
   
 <nav aria-label="Progress">
       <ol role="list" className="space-y-4 md:flex md:space-y-0 md:space-x-8">
@@ -467,6 +467,7 @@ console.log("githubUsername___",githubUsername);
 
 
 
+<div class="py-12 px-4">
 
 
 
@@ -478,7 +479,7 @@ console.log("githubUsername___",githubUsername);
             <div className="bg-white lg:min-w-0 lg:flex-1">
               <div className="border-b border-t border-gray-200 pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:border-t-0 xl:pl-6 xl:pt-6">
                 <div className="flex items-center">
-                  <h1 className="flex-1 text-lg font-medium">Projects</h1>
+                  <h1 className="flex-1 text-lg font-medium">Repos</h1>
                   <Menu as="div" className="relative">
                     <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                       <BarsArrowUpIcon className="mr-3 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -577,7 +578,6 @@ console.log("githubUsername___",githubUsername);
           </div>
 
 
-          <div class="py-12 px-4">
       <div class="lg:max-w-[356px] md:max-w-[516px] max-w-[343px] mx-auto">
         <div class="mx-auto bg-white px-3 py-4 rounded">
           <div>
