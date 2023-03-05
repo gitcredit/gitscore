@@ -17,6 +17,11 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { GithubInsights } from "@mktcodelib/github-insights";
 import { useEffect, useState } from "react";
 
+const steps = [
+  { id: 'Step 1', name: 'Connect Github', href: '#', status: 'complete' },
+  { id: 'Step 2', name: 'Connect your Wallet', href: '#', status: 'current' },
+  { id: 'Step 3', name: 'Submit Application', href: '#', status: 'upcoming' },
+]
 
 
 const navigation = [
@@ -82,7 +87,9 @@ export default function Score() {
   return (
     <>
 
-
+      {/* Background color split screen for large screens */}
+      <div className="fixed top-0 left-0 h-full w-1/2 bg-white" aria-hidden="true" />
+      <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-50" aria-hidden="true" />
 
 <nav aria-label="Progress">
       <ol role="list" className="space-y-4 md:flex md:space-y-0 md:space-x-8">
@@ -138,9 +145,7 @@ export default function Score() {
 
 
 
-      {/* Background color split screen for large screens */}
-      <div className="fixed top-0 left-0 h-full w-1/2 bg-white" aria-hidden="true" />
-      <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-50" aria-hidden="true" />
+
       <div className="relative flex min-h-full flex-col">
         {/* Navbar */}
       
