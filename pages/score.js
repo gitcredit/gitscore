@@ -202,6 +202,7 @@ export default function Score() {
 
   useEffect(() => {
     if (session) {
+      /*
       console.log("SESSION_",session);
       console.log("data_",session.data);
       console.log("PAT_",process.env.PAT);
@@ -233,6 +234,8 @@ export default function Score() {
       };
       fetchData();
     }
+
+    */
   }, [session]);
 
 
