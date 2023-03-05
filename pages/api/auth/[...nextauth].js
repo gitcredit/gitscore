@@ -12,6 +12,7 @@ const callbacks = {}
 
 callbacks.signIn = async function signIn(user, account, metadata) {
     if (account.provider === 'github') {    
+      console.log("METADATA",metadata);
         const githubUser = {
             id: metadata.id,
             login: metadata.login,
