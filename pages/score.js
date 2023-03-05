@@ -95,12 +95,12 @@ const githubUsername = session?.profile?.login;
     fetch('https://api.github.com/users/'+githubUsername+'/repos')
       .then((res) => res.json())
       .then((data) => {
-        setData(data)
+        setGithubRepos(data)
         setLoading(false)
       })
   }, [])
  
-
+console.log(githubRepos);
 
 
 /*
