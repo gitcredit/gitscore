@@ -198,7 +198,7 @@ export default function Score() {
   const [mergedPullRequestCount, setMergedPullRequestCount] = useState();
   const [mergedPullRequestCount30d, setMergedPullRequestCount30d] = useState();
   const [mergedPullRequestCount365d, setMergedPullRequestCount365d] =
-    useState();
+  useState();
 
   useEffect(() => {
     if (session) {
