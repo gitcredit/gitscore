@@ -204,7 +204,7 @@ export default function Score() {
     if (session) {
       console.log("SESSION_",session);
       console.log("data_",session.data);
-      console.log("user_",session.data.user);
+      
       const githubInsights = new GithubInsights({
         viewerToken: process.env.PAT,
       });
@@ -294,7 +294,7 @@ export default function Score() {
                                 'block px-4 py-2 text-sm'
                               )}
                             >
-                              Date reated
+                              Date created
                             </a>
                           )}
                         </Menu.Item>
