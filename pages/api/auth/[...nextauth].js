@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import { redirect } from 'next/navigation';
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -11,10 +12,14 @@ export default NextAuth({
   ],
   callbacks: {
     async redirect({ url, baseUrl }) {
+/*
       console.log("redirect__");
       console.log("url",url);
       console.log("baseUrl",baseUrl);
       return baseUrl
+  */
+      redirect('/score');
+
     },
     async jwt({ token, account }) {
       console.log("JWT_");
