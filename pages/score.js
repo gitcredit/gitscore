@@ -68,8 +68,15 @@ const calcScore = () => {
   return score + 455;
 };
 
+
+
+
 export default function Score() {
-let githubRepoList;
+  let githubRepoList;
+  let name;
+  let avatar_url;
+  let html_url;
+
   const { data: session } = useSession();
   const [forkCount, setForkCount] = useState();
   const [followersForkCount, setFollowersForkCount] = useState();
@@ -92,7 +99,9 @@ console.log("githubUsername___",githubUsername);
 
   useEffect(() => {
     if (session){
-    console.log("SESSION_login_inside",session?.profile?.login);
+      console.log("SESSION_login_inside",session?.profile?.login);
+
+    
 
     setLoading(true)
     fetch('https://api.github.com/users/'+githubUsername+'/repos')
@@ -106,6 +115,9 @@ console.log("githubUsername___",githubUsername);
   }, [session])
  if (!isLoading){
   console.log("githubRepos",githubRepos);
+  avatar_url=session?.profile?.avatar_url;
+  name=session?.profile?.name;
+  html_url=session?.profile?.html_url;
    githubRepoList =   githubRepos?.map((project) => (
     <li
       key={project.id}
@@ -222,12 +234,12 @@ console.log("githubUsername___",githubUsername);
         <div>
           <img
             className="inline-block h-9 w-9 rounded-full"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            src={avatar_url}
             alt=""
           />
         </div>
         <div className="ml-3">
-          <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
+          <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{name}</p>
           <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
         </div>
       </div>
