@@ -1,9 +1,9 @@
 import NextAuth from 'next-auth'
-import Providers from 'next-auth/providers'
+import GithubProvider from "next-auth/providers/github";
 
 const providers = [
-    Providers.GitHub({
-        clientId: process.env.GITHUB_CLIENT_ID,
+  GithubProvider({
+    clientId: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET
     })
 ]
