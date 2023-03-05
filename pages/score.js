@@ -82,6 +82,62 @@ export default function Score() {
   return (
     <>
 
+
+
+<nav aria-label="Progress">
+      <ol role="list" className="space-y-4 md:flex md:space-y-0 md:space-x-8">
+        {steps.map((step) => (
+          <li key={step.name} className="md:flex-1">
+            {step.status === 'complete' ? (
+              <a
+                href={step.href}
+                className="group flex flex-col border-l-4 border-indigo-600 py-2 pl-4 hover:border-indigo-800 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0"
+              >
+                <span className="text-sm font-medium text-indigo-600 group-hover:text-indigo-800">{step.id}</span>
+                <span className="text-sm font-medium">{step.name}</span>
+              </a>
+            ) : step.status === 'current' ? (
+              <a
+                href={step.href}
+                className="flex flex-col border-l-4 border-indigo-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0"
+                aria-current="step"
+              >
+                <span className="text-sm font-medium text-indigo-600">{step.id}</span>
+                <span className="text-sm font-medium">{step.name}</span>
+              </a>
+            ) : (
+              <a
+                href={step.href}
+                className="group flex flex-col border-l-4 border-gray-200 py-2 pl-4 hover:border-gray-300 md:border-l-0 md:border-t-4 md:pl-0 md:pt-4 md:pb-0"
+              >
+                <span className="text-sm font-medium text-gray-500 group-hover:text-gray-700">{step.id}</span>
+                <span className="text-sm font-medium">{step.name}</span>
+              </a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+
+<a href="#" className="group block flex-shrink-0">
+      <div className="flex items-center">
+        <div>
+          <img
+            className="inline-block h-9 w-9 rounded-full"
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            alt=""
+          />
+        </div>
+        <div className="ml-3">
+          <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
+          <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
+        </div>
+      </div>
+    </a>
+
+
+
       {/* Background color split screen for large screens */}
       <div className="fixed top-0 left-0 h-full w-1/2 bg-white" aria-hidden="true" />
       <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-50" aria-hidden="true" />
