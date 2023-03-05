@@ -63,7 +63,6 @@ const calcScore = () => {
   return score + 455;
 };
 
-
 export default function Score() {
 
   const { data: session } = useSession();
