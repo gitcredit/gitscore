@@ -85,9 +85,13 @@ const steps = [
 ]
 
 
+
+
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Domains', href: '#', current: false },
+  { name: 'Home', href: '#' },
+  { name: 'How it works?', href: '#' },
+  { name: 'Borrow', href: '#' },
+  { name: 'Lend', href: '#' },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -400,7 +404,7 @@ console.log("githubUsername___",githubUsername);
         </Popover>
         <div className=" pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14" style={{backgroundColor:"#7642bd"}}>
             <div className="mx-auto max-w-7xl lg:px-8">
-<div class="flex">
+<div class="flex bg-white">
   <div class="flex-initial ">
   
 <a href="#" className="group block flex-shrink-0">
@@ -419,7 +423,7 @@ console.log("githubUsername___",githubUsername);
       </div>
     </a>
   </div>
-  <div class="flex">
+  <div class="grow w-full">
   
 <nav aria-label="Progress">
       <ol role="list" className="space-y-4 md:flex md:space-y-0 md:space-x-8">
