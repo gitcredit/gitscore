@@ -11,16 +11,7 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async redirect({ url, baseUrl }) {
-/*
-      console.log("redirect__");
-      console.log("url",url);
-      console.log("baseUrl",baseUrl);
-      return baseUrl
-  */
-      redirect('/score');
 
-    },
     async jwt({ token, account }) {
       console.log("JWT_");
       console.log("token_",token);
