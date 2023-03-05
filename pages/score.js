@@ -180,9 +180,9 @@ export default function Score() {
   const [mergedPullRequestCount365d, setMergedPullRequestCount365d] =
   useState();
   console.log("SESSION_",session);
-  console.log("SESSION_",session.profile);
+  console.log("SESSION_",session?.profile);
 
-  const calculatedscore = calc_user_rank(session.profile,60);
+  const calculatedscore = calc_user_rank(session?.profile,60);
 console.log("SCOREEE",calculatedscore);
 
   return (
