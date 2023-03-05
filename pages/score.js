@@ -205,9 +205,6 @@ export default function Score() {
       console.log("SESSION_",session);
       console.log("data_",session.data);
       console.log("user_",session.data.user);
-
-
-      
       const githubInsights = new GithubInsights({
         viewerToken: process.env.PAT,
       });
@@ -242,14 +239,7 @@ export default function Score() {
 
   return (
     <>
-      {/*
-        This example requires updating your template:
 
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       {/* Background color split screen for large screens */}
       <div className="fixed top-0 left-0 h-full w-1/2 bg-white" aria-hidden="true" />
       <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-50" aria-hidden="true" />
@@ -304,7 +294,7 @@ export default function Score() {
                                 'block px-4 py-2 text-sm'
                               )}
                             >
-                              Date created
+                              Date reated
                             </a>
                           )}
                         </Menu.Item>
