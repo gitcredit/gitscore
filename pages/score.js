@@ -86,11 +86,13 @@ export default function Score() {
   console.log("SESSION_login",session?.profile?.login);
   //setGithubUsername(session?.profile?.login);
 const githubUsername = session?.profile?.login;
-//console.log("githubUsername___",githubUsername);
+console.log("githubUsername___",githubUsername);
 
 
 
   useEffect(() => {
+    console.log("SESSION_login_inside",session?.profile?.login);
+
     setLoading(true)
     fetch('https://api.github.com/users/'+githubUsername+'/repos')
       .then((res) => {
