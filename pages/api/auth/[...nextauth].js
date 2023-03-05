@@ -13,22 +13,35 @@ export default NextAuth({
     async redirect({ url, baseUrl }) {
       return baseUrl
     },
-    async session({ session, user }) {
+    async jwt({ token, account }) {
+      console.log("JWT_");
+      console.log("token_",token);
+      console.log("account_",account);
 
-      console.log("async_session___");
-      console.log("SESSION",session);
-console.log("USER",user);
-      session.user.id = user.id
-      return session
+      // Persist the OAuth access_token to the token right after signin
+      if (account) {
+        token.accessToken = account.access_token
+      }
+      return token
     },
+    async session({ session, token, user }) {
+      // Send properties to the client, like an access_token from a provider.
+      console.log("SESSION__");
+      console.log("token_",token);
+      console.log("user_",user);
+      session.accessToken = token.accessToken;
+      return session
+    }
+  },
 
 
 
 
-//     async signIn(user, account, metadata) {
+     async signIn(user) {
 
+return {user: user} // res.data contains whatever received from DB call => fetchUserInfo(credentials.opt)
 
-
+     }
 // if (account.provider === 'github') {    
 //   console.log("METADATA",metadata);
 //     const githubUser = {

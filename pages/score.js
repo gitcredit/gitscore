@@ -189,6 +189,7 @@ const calcScore = () => {
 export default function Score() {
 
   const { data: session } = useSession();
+  console.log("SESSIONDATA",data);
   const [forkCount, setForkCount] = useState();
   const [followersForkCount, setFollowersForkCount] = useState();
   const [stargazerCount, setStargazerCount] = useState();
