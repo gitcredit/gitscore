@@ -106,7 +106,7 @@ console.log("githubUsername___",githubUsername);
         setLoading(false)
       })
     }
-  }, [])
+  }, [session])
  
 console.log(githubRepos);
 
