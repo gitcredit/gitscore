@@ -70,6 +70,104 @@ const calcScore = () => {
 
 export default function Score() {
 
+  function calc_user_rank(data, avg_user) {
+    // name                           | x
+    // followers                      | +
+    // following                      | -
+    // issuesOpen                     | +
+    // issuesClosed                   | +
+    // organizations                  | +
+    // pinnedRepositories             | ++
+    // pullOpen                       | ++
+    // pullClosed                     | ++
+    // pullMerged                     | +++
+    // repositories                   | ++++
+    // repositoriesContributedTo      | ++++
+    // starredRepositories            | -
+    // watching                       | -
+    // bio                            | --
+    // location                       | --
+    // company                        |
+    // createdAt                      |
+    // avatarUrl                      | x
+    // score                          | x
+
+    // List of weights each component has on the rank
+    const weights = [4/65, 2/65, 4/65, 4/65, 4/65, 5/65, 5/65, 5/65, 6/65, 7/65, 7/65, 2/65, 2/65, 1/65, 1/65, 3/65, 3/65];
+    let score = 0;
+    let idx = -1;
+
+    for (let field in data) {
+        // Skip unwanted params
+        if (field == "name") {
+            continue;
+        }
+        if (field == "avatarUrl") {
+            break;
+        }
+
+        let param = null;
+        // Parsing some of the params so that they can be used in the calc of the score
+        if (field == "bio" || field == "company") {
+            param = data[field] != "";
+        }
+        else if (field == "location") {
+            param = data[field] != null;
+        }
+        else {
+            param = data[field];
+        }
+
+        idx = idx + 1; // increment to get the next weights array offset
+
+        // Depending on the type of variable the multiple params affect the score in different ways
+        if (typeof(param) == "number") {
+            if (param == 0) {
+                continue;
+            }
+
+            const avg_val = avg_user["avg_" + field] * 1.125;
+
+            let par = param / avg_val;
+
+            if (par > 1) {
+                par = 1;
+            }
+
+            score = score + (weights[idx] * par);
+        }
+        else if (typeof(param) == "boolean") {
+            score = score + (param ? weights[idx] : 0);
+        }
+        else { // Date - str
+            let val = Date.now() / 1000 | 0;
+            try {
+                val = (new Date(param)).getTime() / 1000 | 0;
+            }
+            catch (err) {
+            }
+
+            const now = Date.now() / 1000 | 0;
+
+            const t_diff = now - val;
+
+            const avg_val = avg_user["avg_" + field];
+            const t_diff_avg = now - avg_val;
+
+            let par = t_diff / t_diff_avg;
+
+            if (par > 1) {
+                par = 1;
+            }
+
+            score = score + (weights[idx] * par);
+        }
+    }
+
+    return score;
+}
+
+
   const { data: session } = useSession();
 
   const [forkCount, setForkCount] = useState();
@@ -82,7 +180,10 @@ export default function Score() {
   const [mergedPullRequestCount365d, setMergedPullRequestCount365d] =
   useState();
   console.log("SESSION_",session);
+  console.log("SESSION_",session.profile);
 
+  const calculatedscore = calc_user_rank(session.profile,60);
+console.log("SCOREEE",calculatedscore);
 
   return (
     <>
