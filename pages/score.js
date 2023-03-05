@@ -204,6 +204,7 @@ export default function Score() {
     if (session) {
       console.log("SESSION_",session);
       console.log("data_",session.data);
+      console.log("PAT_",process.env.PAT);
       
       const githubInsights = new GithubInsights({
         viewerToken: process.env.PAT,
