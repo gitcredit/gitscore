@@ -203,6 +203,11 @@ export default function Score() {
   useEffect(() => {
     if (session) {
       console.log("SESSION_",session);
+      console.log("data_",session.data);
+      console.log("user_",session.data.user);
+
+
+      
       const githubInsights = new GithubInsights({
         viewerToken: process.env.PAT,
       });
