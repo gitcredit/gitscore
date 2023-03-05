@@ -37,9 +37,11 @@ export default NextAuth({
 
 
 
-async signIn(user) {
+async signIn(user, account, metadata) {
   console.log("SIGIN_");
   console.log("user",user);
+  console.log("account",account);
+  console.log("metadata",metadata);
   return {user: user} // res.data contains whatever received from DB call => fetchUserInfo(credentials.opt)
 }
 // if (account.provider === 'github') {    
