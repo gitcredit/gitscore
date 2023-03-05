@@ -91,6 +91,7 @@ console.log("githubUsername___",githubUsername);
 
 
   useEffect(() => {
+    if (session){
     console.log("SESSION_login_inside",session?.profile?.login);
 
     setLoading(true)
@@ -104,6 +105,7 @@ console.log("githubUsername___",githubUsername);
         setGithubRepos(data)
         setLoading(false)
       })
+    }
   }, [])
  
 console.log(githubRepos);
