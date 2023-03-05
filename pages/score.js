@@ -104,7 +104,7 @@ console.log("githubUsername___",githubUsername);
       })
     }
   }, [session])
- if (!loading){
+ if (!isLoading){
   console.log("githubRepos",githubRepos);
  }
 
