@@ -15,35 +15,38 @@ export default NextAuth({
     },
     async session({ session, user }) {
 
-console.log("SESSION",session);
+      console.log("async_session___");
+      console.log("SESSION",session);
 console.log("USER",user);
       session.user.id = user.id
       return session
     },
-    async signIn(user, account, metadata) {
-console.log("USER",user);
-console.log("ACCOUNT",account);
-console.log("METADATA",metadata);
-
-
-if (account.provider === 'github') {    
-  console.log("METADATA",metadata);
-    const githubUser = {
-        id: metadata.id,
-        login: metadata.login,
-        name: metadata.name,
-        avatar: user.image
-    }
-
-    //user.accessToken = await getTokenFromYourAPIServer('github', githubUser)
-    return true
-}
-
-return false;
 
 
 
-    }
+
+//     async signIn(user, account, metadata) {
+
+
+
+// if (account.provider === 'github') {    
+//   console.log("METADATA",metadata);
+//     const githubUser = {
+//         id: metadata.id,
+//         login: metadata.login,
+//         name: metadata.name,
+//         avatar: user.image
+//     }
+
+//     //user.accessToken = await getTokenFromYourAPIServer('github', githubUser)
+//     return true
+// }
+
+// return false;
+//     }
+
+
+
   },
 
 });
