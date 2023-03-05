@@ -25,12 +25,13 @@ export default NextAuth({
       }
       return token
     },
-    async session({ session, token, user }) {
+    async session({ session, token, user,profile }) {
       // Send properties to the client, like an access_token from a provider.
       console.log("SESSION__");
       console.log("session_",session);
       console.log("token_",token);
       console.log("user",user);
+      console.log("profile",profile);
       session.accessToken = token.accessToken;
       return session
     }
@@ -39,11 +40,13 @@ export default NextAuth({
 
 
 
-async signIn(user, account, metadata) {
+async signIn(user, account, metadata, profile) {
   console.log("SIGIN_");
   console.log("user",user);
   console.log("account",account);
   console.log("metadata",metadata);
+  console.log("profile",profile);
+  
   return {user: user} // res.data contains whatever received from DB call => fetchUserInfo(credentials.opt)
 }
 // if (account.provider === 'github') {    
