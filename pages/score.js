@@ -88,7 +88,7 @@ export default function Score() {
 const githubUsername = session?.profile?.login;
 //console.log("githubUsername___",githubUsername);
 
-/*
+
 
   useEffect(() => {
     setLoading(true)
@@ -100,7 +100,7 @@ const githubUsername = session?.profile?.login;
       })
   }, [])
  
-*/
+
 
 
 /*
