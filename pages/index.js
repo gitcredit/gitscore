@@ -181,6 +181,7 @@ const blogPosts = [
     readingLength: '11 min',
   },
 ]
+
 const footerNavigation = {
   solutions: [
     { name: 'footer', href: '#' },
@@ -321,11 +322,20 @@ export default function Homer() {
                     ))}
                   </div>
                   <div className="mt-6 px-5">
-                    <a
-                      href="#"
-                      className="block w-full rounded-md bg-gradient-to-r from-teal-500 to-cyan-600 py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
-                    >
-                      Start free trial
+                  <a
+                  href="#"
+
+  onClick={() => {
+    signIn("github", {
+      callbackUrl: 'https://gitscore.vercel.app/score',
+    });
+  }}
+
+
+                 
+                  className="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-700"
+                >
+                     Login with Github
                     </a>
                   </div>
                   <div className="mt-6 px-5">
@@ -372,14 +382,7 @@ export default function Homer() {
                             </div>
                           </div>
                         </div>
-                        <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-                          Start your free 14-day trial, no credit card necessary. By providing your email, you agree to
-                          our{' '}
-                          <a href="#" className="font-medium text-white">
-                            terms of service
-                          </a>
-                          .
-                        </p>
+           
                       </form>
                     </div>
                   </div>
